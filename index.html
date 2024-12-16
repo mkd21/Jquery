@@ -20,9 +20,19 @@
 
     <p>I am paragraph </p>
 
-    <p id="secondPara" style="background-color: yellowgreen; height: 200px; width: 100%;">I am paragraph number 2 </p>
+    <p id="secondPara" style="background-color: yellowgreen; height: 200px; width: 100%;">I am 2nd para </p>
 
-    <p>I am paragraph </p>
+    <p id="multipleEventPara" >I am paragraph where multiple events are applied</p>
+
+
+    <input type="text">
+
+    <br><br>
+
+    <input type="text" id="inputArea" placeholder="Enter the text"/>
+
+    <span id="initialMessage">Please Log in</span>
+    <span id="finalMessage">Welcome User</span>
 
     <script>
 
@@ -49,13 +59,88 @@
 
         // selecting elements using id 
 
-        $(document).ready( function(){
-            $("button").click( ()=>{
-                $("#secondPara").toggle();
-            })
-        });
+        // $(document).ready( function(){
+        //     $("button").click( ()=>{
+        //         $("#secondPara").toggle();
+        //     })
+        // });
+
+
+        // mouse events 
+
+        // click 
+        // $(document).ready( ()=>{
+        //     $("input").click( ()=>{
+        //         alert("input field clicked..");
+        //     } )
+        // });
+
+        // create a functionality in which whatever the user types inside the input tag should be updated in realtime inside the paragraph tag 
+
+        // $(document).ready( () =>{
+        //     $("input").on("input" , function(){
+        //         let value = $(this).val();
+        //         console.log(value);
+        //         $("#secondPara").text(value);
+        //     })
+        // });
+
+
+        // effects on jquery 
+        //  hide , show , 
+
+
+        // show some text when user focuses on input tag and show a different text when user removes the focus from the tag 
 
         
+        // $(document).ready( () =>{
+
+        //     // initially i will hide the texts 
+
+        //     $("#initialMessage").hide();
+        //     $("#finalMessage").hide();
+
+        //     $("#inputArea").focus( function(){
+        //         $("#initialMessage").show();  // will show the span having id named initialMessage
+        //     })
+
+        //     $("#inputArea").blur( () =>{
+        //         $("#finalMessage").show();   // will show the span having id named finalMessage
+        //         $("#initialMessage").hide();   // will hide the span having id named as initialMessage
+        //     });
+        // });
+
+
+        // a functionality where the text should fade away after clicking on th input tag and after removing focus from input tag the final text should also fade away
+
+        // $(document).ready( ()=>{
+
+        //     $("#initialMessage").hide();
+        //     $("#finalMessage").hide();
+
+        //     $("#inputArea").focus( ()=>{
+        //         $("#initialMessage").show().fadeOut(2000);
+        //     }); 
+
+        //     $("#inputArea").blur( function(){
+        //         $("#finalMessage").show().fadeOut(3000);
+        //     });
+        // }); 
+
+        // mutiple events on an element 
+
+        $(document).ready(
+            $("#multipleEventPara").on(
+                {
+                    click: function(){
+                        $(this).css({"background-color" : "black" , "color" : "white"});
+                    },
+                    on
+                }
+            )
+        );
+
     </script>
+
 </body>
 </html>
